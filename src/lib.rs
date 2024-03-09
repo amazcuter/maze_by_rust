@@ -41,24 +41,6 @@ impl CellType {
     }
 }
 
-// 这tm真学术,尼玛自定义类型真就自己通过自反性实现偏序关系呗,得亏有#[derive(PartialEq)]
-// impl PartialEq for CellType {
-//     fn eq(&self, other: &Self) -> bool {
-//         match (self, other) {
-//             (CellType::Border, CellType::Border) => true,
-//             (CellType::ConnectedWall,CellType::ConnectedWall) => true,
-//             (CellType::DetermineUnit,CellType::DetermineUnit) => true,
-//             (CellType::EndPoint,CellType::EndPoint) => true,
-//             (CellType::Path,CellType::Path) => true,
-//             (CellType::PendingUnit,CellType::PendingUnit) => true,
-//             (CellType::PendingWall,CellType::PendingWall) => true,
-//             (CellType::StartPoint,CellType::StartPoint) => true,
-//             (CellType::Wall,CellType::Wall) => true,
-//             _ => false,
-//         }
-//     }
-// }
-
 /// 迷宫结构体
 pub struct Maze {
     map: Vec<Vec<CellType>>,
